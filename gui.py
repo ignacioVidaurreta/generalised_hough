@@ -181,6 +181,10 @@ class MainWindow(QWidget):
 
     def runGeneralizedHough(self):
         args = dict()
+
+        args["source_filename"] = self.sourceImageFilename.text()
+        args["ref_filename"] = self.refImageFilename.text()
+        # import ipdb; ipdb.set_trace()
         args["min_dist"]  = int(self.min_dist_input.text())
         args["min_angle"] = int(self.min_angle_input.text())
         args["max_angle"] = int(self.max_angle_input.text())

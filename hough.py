@@ -2,10 +2,10 @@ import cv2
 import numpy as np
 
 def generalized_hough(args: dict):
-    img = cv2.imread("Input1.png")
+    img = cv2.imread(args["source_filename"])
     img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
-    template = cv2.imread("Input1Ref.png")
+    template = cv2.imread(args["ref_filename"])
     height, width = template.shape[:2]
 
     edges = cv2.Canny(template, 200, 250)
