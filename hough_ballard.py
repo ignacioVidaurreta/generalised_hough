@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-def generalized_hough(args: dict):
+def generalized_hough_ballard(args: dict):
     img = cv2.imread(args["source_filename"])
     img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
@@ -10,22 +10,11 @@ def generalized_hough(args: dict):
 
     edges = cv2.Canny(template, 200, 250)
     ght = cv2.createGeneralizedHoughGuil()
+    ght = cv2.createGeneralizedHoughBallard()
     ght.setTemplate(edges)
 
-    ght.setMinDist(args["min_dist"])
-    ght.setMinAngle(args["min_angle"])
-    ght.setMaxAngle(args["max_angle"])
-    ght.setAngleStep(args["angle_step"])
     ght.setLevels(args["levels"])
-    ght.setMinScale(args["min_scale"])
-    ght.setMaxScale(args["max_scale"])
-    ght.setScaleStep(args["scale_step"])
-    ght.setAngleThresh(args["angle_thresh"])
-    ght.setScaleThresh(args["scale_thresh"])
-    ght.setPosThresh(args["pos"])
-    ght.setAngleEpsilon(args["angle_epsilon"])
-    ght.setXi(args["xi"])
-
+    ght.setVotesThreshold(args["vote_threshold"])
     positions = ght.detect(img_gray)[0][0]
 
     for position in positions:
