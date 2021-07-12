@@ -9,8 +9,7 @@ def generalized_hough_ballard(args: dict):
     template = cv2.imread(args["ref_filename"])
     height, width = template.shape[:2]
 
-    edges = cv2.Canny(template, 200, 250)
-    ght = cv2.createGeneralizedHoughGuil()
+    edges = cv2.Canny(template, 70, 150)
     ght = cv2.createGeneralizedHoughBallard()
     ght.setTemplate(edges)
 

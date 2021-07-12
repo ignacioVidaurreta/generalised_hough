@@ -9,7 +9,7 @@ def generalized_hough_guil(args: dict):
     template = cv2.imread(args["ref_filename"])
     height, width = template.shape[:2]
 
-    edges = cv2.Canny(template, 200, 250)
+    edges = cv2.Canny(template, 70, 150)
     ght = cv2.createGeneralizedHoughGuil()
     ght.setTemplate(edges)
 
@@ -24,7 +24,7 @@ def generalized_hough_guil(args: dict):
     ght.setAngleThresh(args["angle_thresh"])
     ght.setScaleThresh(args["scale_thresh"])
     ght.setPosThresh(args["pos"])
-    ght.setAngleEpsilon(args["angle_epsilon"])
+    # ght.setAngleEpsilon(args["angle_epsilon"])
     ght.setXi(args["xi"])
 
     result = ght.detect(img_gray)

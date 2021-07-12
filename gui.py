@@ -96,82 +96,70 @@ class MainWindow(QWidget):
         self.tab2.layout.addWidget(self.min_dist_input, 0, 1)
         self.min_dist_input.setText("200")
 
-        self.levels_label, self.levels_input = QLabel('Levels'), QLineEdit()
-        self.levels_label.setStyleSheet("background-color: #d6f9d6")
-        self.tab2.layout.addWidget(self.levels_label, 1, 0)
-        self.tab2.layout.addWidget(self.levels_input, 1, 1)
-        self.levels_input.setText("360")
-
         self.min_angle_label, self.min_angle_input = QLabel('Min Angle'), QLineEdit()
         self.min_angle_label.setStyleSheet("background-color: #d6f9d6")
-        self.tab2.layout.addWidget(self.min_angle_label, 2, 0)
-        self.tab2.layout.addWidget(self.min_angle_input, 2, 1)
+        self.tab2.layout.addWidget(self.min_angle_label, 1, 0)
+        self.tab2.layout.addWidget(self.min_angle_input, 1, 1)
         self.min_angle_input.setText("0")
 
 
         self.max_angle_label, self.max_angle_input = QLabel('Max Angle'), QLineEdit()
         self.max_angle_label.setStyleSheet("background-color: #d6f9d6")
-        self.tab2.layout.addWidget(self.max_angle_label, 2, 2)
-        self.tab2.layout.addWidget(self.max_angle_input, 2, 3)
+        self.tab2.layout.addWidget(self.max_angle_label, 1, 2)
+        self.tab2.layout.addWidget(self.max_angle_input, 1, 3)
         self.max_angle_input.setText("360")
 
         self.angle_step_label, self.angle_step_input = QLabel('Angle Step'), QLineEdit()
         self.angle_step_label.setStyleSheet("background-color: #d6f9d6")
-        self.tab2.layout.addWidget(self.angle_step_label, 2, 4)
-        self.tab2.layout.addWidget(self.angle_step_input, 2, 5)
+        self.tab2.layout.addWidget(self.angle_step_label, 1, 4)
+        self.tab2.layout.addWidget(self.angle_step_input, 1, 5)
         self.angle_step_input.setText("1")
 
         self.angle_thresh_label, self.angle_thresh_input = QLabel('Angle Thresh'), QLineEdit()
         self.angle_thresh_label.setStyleSheet("background-color: #d6f9d6")
-        self.tab2.layout.addWidget(self.angle_thresh_label, 2, 6)
-        self.tab2.layout.addWidget(self.angle_thresh_input, 2, 7)
+        self.tab2.layout.addWidget(self.angle_thresh_label, 1, 6)
+        self.tab2.layout.addWidget(self.angle_thresh_input, 1, 7)
         self.angle_thresh_input.setText("100")
 
         self.min_scale_label, self.min_scale_input = QLabel('Min Scale'), QLineEdit()
         self.min_scale_label.setStyleSheet("background-color: #d6f9d6")
-        self.tab2.layout.addWidget(self.min_scale_label, 3, 0)
-        self.tab2.layout.addWidget(self.min_scale_input, 3, 1)
+        self.tab2.layout.addWidget(self.min_scale_label, 2, 0)
+        self.tab2.layout.addWidget(self.min_scale_input, 2, 1)
         self.min_scale_input.setText("1")
 
         self.max_scale_label, self.max_scale_input = QLabel('Max Scale'), QLineEdit()
         self.max_scale_label.setStyleSheet("background-color: #d6f9d6")
-        self.tab2.layout.addWidget(self.max_scale_label, 3, 2)
-        self.tab2.layout.addWidget(self.max_scale_input, 3, 3)
+        self.tab2.layout.addWidget(self.max_scale_label, 2, 2)
+        self.tab2.layout.addWidget(self.max_scale_input, 2, 3)
         self.max_scale_input.setText("1.3")
 
         self.scale_step_label, self.scale_step_input = QLabel('Scale Step'), QLineEdit()
         self.scale_step_label.setStyleSheet("background-color: #d6f9d6")
-        self.tab2.layout.addWidget(self.scale_step_label, 3, 4)
-        self.tab2.layout.addWidget(self.scale_step_input, 3, 5)
+        self.tab2.layout.addWidget(self.scale_step_label, 2, 4)
+        self.tab2.layout.addWidget(self.scale_step_input, 2, 5)
         self.scale_step_input.setText("0.05")
 
         self.scale_thresh_label, self.scale_thresh_input = QLabel('Scale Thresh'), QLineEdit()
         self.scale_thresh_label.setStyleSheet("background-color: #d6f9d6")
-        self.tab2.layout.addWidget(self.scale_thresh_label, 3, 6)
-        self.tab2.layout.addWidget(self.scale_thresh_input, 3, 7)
+        self.tab2.layout.addWidget(self.scale_thresh_label, 2, 6)
+        self.tab2.layout.addWidget(self.scale_thresh_input, 2, 7)
         self.scale_thresh_input.setText("100")
 
         self.position_thresh_label, self.position_thresh_input = QLabel('Position Thresh'), QLineEdit()
         self.position_thresh_label.setStyleSheet("background-color: #d6f9d6")
-        self.tab2.layout.addWidget(self.position_thresh_label, 4, 0)
-        self.tab2.layout.addWidget(self.position_thresh_input, 4, 1)
+        self.tab2.layout.addWidget(self.position_thresh_label, 3, 0)
+        self.tab2.layout.addWidget(self.position_thresh_input, 3, 1)
         self.position_thresh_input.setText("100")
-
-        self.angle_epsilon_label, self.angle_epsilon_input = QLabel('Angle Epsilon'), QLineEdit()
-        self.angle_epsilon_label.setStyleSheet("background-color: #d6f9d6")
-        self.tab2.layout.addWidget(self.angle_epsilon_label, 4, 2)
-        self.tab2.layout.addWidget(self.angle_epsilon_input, 4, 3)
-        self.angle_epsilon_input.setText("1")
 
         self.xi_label, self.xi_input = QLabel('Xi'), QLineEdit()
         self.xi_label.setStyleSheet("background-color: #d6f9d6")
-        self.tab2.layout.addWidget(self.xi_label, 4, 4)
-        self.tab2.layout.addWidget(self.xi_input, 4, 5)
+        self.tab2.layout.addWidget(self.xi_label, 3, 2)
+        self.tab2.layout.addWidget(self.xi_input, 3, 3)
         self.xi_input.setText("90")
 
         self.houghButton = QPushButton("Execute")
         self.houghButton.clicked.connect(self.runGeneralizedHoughGuil)
-        self.tab2.layout.addWidget(self.houghButton, 5, 0)
+        self.tab2.layout.addWidget(self.houghButton, 4, 0)
 
         self.tab2.setLayout(self.tab2.layout)
 
@@ -190,9 +178,15 @@ class MainWindow(QWidget):
         self.tab3.layout.addWidget(self.vote_threshold_input, 1, 1)
         self.vote_threshold_input.setText("150")
 
+        self.min_dist_label, self.min_dist_input = QLabel('Min Distance'), QLineEdit()
+        self.min_dist_label.setStyleSheet("background-color: #d6f9d6")
+        self.tab3.layout.addWidget(self.min_dist_label, 2, 0)
+        self.tab3.layout.addWidget(self.min_dist_input, 2, 1)
+        self.min_dist_input.setText("200")
+
         self.houghBallardBtn = QPushButton("Execute")
         self.houghBallardBtn.clicked.connect(self.runGeneralizedHoughBallard)
-        self.tab3.layout.addWidget(self.houghBallardBtn, 2, 0)
+        self.tab3.layout.addWidget(self.houghBallardBtn, 3, 0)
 
         self.tab3.setLayout(self.tab3.layout)
 
@@ -249,7 +243,6 @@ class MainWindow(QWidget):
         args["scale_thresh"] = int(self.scale_thresh_input.text())
         args["angle_thresh"] = int(self.angle_thresh_input.text())
         args["pos"] = int(self.position_thresh_input.text())
-        args["angle_epsilon"] = int(self.angle_epsilon_input.text())
         args["xi"] = int(self.xi_input.text())
 
         print("Running Generalized Hough Transform")
@@ -268,6 +261,7 @@ class MainWindow(QWidget):
 
         args["levels"] = int(self.levels_input.text())
         args["vote_threshold"] = int(self.vote_threshold_input.text())
+        args["min_dist"]  = int(self.min_dist_input.text())
 
         print("Running Generalized Ballard Hough Transform")
         self.houghButton.setEnabled(False)
