@@ -21,6 +21,7 @@ from PyQt5.QtGui import QIcon
 from PyQt5.QtCore import pyqtSlot, QSize
 import cv2
 import numpy as np
+from numpy.lib import histograms
 from hough_guil import generalized_hough_guil
 from hough_ballard import generalized_hough_ballard
 
@@ -187,7 +188,7 @@ class MainWindow(QWidget):
         self.vote_threshold_label.setStyleSheet("background-color: #d6f9d6")
         self.tab3.layout.addWidget(self.vote_threshold_label, 1, 0)
         self.tab3.layout.addWidget(self.vote_threshold_input, 1, 1)
-        self.vote_threshold_input.setText("50")
+        self.vote_threshold_input.setText("150")
 
         self.houghBallardBtn = QPushButton("Execute")
         self.houghBallardBtn.clicked.connect(self.runGeneralizedHoughBallard)
@@ -198,13 +199,15 @@ class MainWindow(QWidget):
     def uploadSourceImage(self):
         filename, image = self._uploadImage("Source Image")
         self.image = image
-        self.sourceImageFilename = QLabel(f'{filename.split("/")[-1]}')
+        if hasattr(self, "sourceImageFilename"): self.sourceImageFilename.hide()
+        self.sourceImageFilename = QLabel(filename)
         self.tab1.layout.addWidget(self.sourceImageFilename, 0, 1)
 
     def uploadRefImage(self):
         filename, image = self._uploadImage("Reference Image")
         self.ref_image = image
-        self.refImageFilename = QLabel(f'{filename.split("/")[-1]}')
+        if hasattr(self, "refImageFilename"): self.refImageFilename.hide()
+        self.refImageFilename = QLabel(filename)
         self.tab1.layout.addWidget(self.refImageFilename, 1, 1)
 
     def _uploadImage(self, img_title: str):
@@ -235,7 +238,6 @@ class MainWindow(QWidget):
 
         args["source_filename"] = self.sourceImageFilename.text()
         args["ref_filename"] = self.refImageFilename.text()
-        import ipdb; ipdb.set_trace()
         args["min_dist"]  = int(self.min_dist_input.text())
         args["min_angle"] = int(self.min_angle_input.text())
         args["max_angle"] = int(self.max_angle_input.text())

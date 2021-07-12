@@ -2,6 +2,7 @@ import cv2
 import numpy as np
 
 def generalized_hough_ballard(args: dict):
+    print(args["source_filename"])
     img = cv2.imread(args["source_filename"])
     img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
